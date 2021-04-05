@@ -11,4 +11,4 @@ script:
   - git config user.email "lidaqian11@gmail.com"
   - git add .
   - git commit -m "update note"
-  - git push --force "https://${GITHUB_TOKEN}@github.com/aq0706/aq0706.github.io.git" master
+  - git push --force "https://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@github.com/aq0706/aq0706.github.io.git" master
