@@ -12,3 +12,5 @@ script:
   - git add .
   - git commit -m "update note"
   - git push --force "https://${github_token}@github.com/aq0706/aq0706.github.io.git" master
+notifications:
+  webhokks: https://oapi.dingtalk.com/robot/send?access_token=abefafc35444add75b4f752c0f67b5e9659bc1f2e9ef73d21724e619c22179d0
