@@ -4,4 +4,11 @@ node_js:
 before_script:
   - npm i -g github-markdown
 script: 
-  - echo "hello"
+  - rm -rf .git
+  - bash ./bootstrap.sh
+  - git init
+  - git config user.name "aq0706"
+  - git config user.email "lidaqian11@gmail.com"
+  - git add .
+  - git commit -m "update note"
+  - git push --force https://$GITHUB_TOKEN@github.com:aq0706/aq0706.github.io.git master
