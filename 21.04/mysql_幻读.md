@@ -1,7 +1,5 @@
 # Innodb中RR隔离级别是否能防止幻读
 
-不能完全防止幻读，select的可见范围可以防止，但是update的可见范围无法防止。
-
 在快照读情况下，mysql通过mvcc来避免幻读。
 
 在当前读情况下，mysql通过next-key来避免幻读。
