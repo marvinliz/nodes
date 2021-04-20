@@ -2,7 +2,9 @@
 
 ​	网上找了很多资料都不行，最后通过bilibili上的[视频](https://www.bilibili.com/video/BV1rT4y137vD)解决了。
 
-​	1.需要在virtualBox设置网络中配置NAT和Only-host，分别记下他们的MAC地址。
+​	1.需要在virtualBox设置网络中配置NAT和Only-host，分别记下他们的MAC地址。NAT会在主机上生成一个虚拟网卡，
+
+虚拟机通过连接该网卡获得访问主机和外网的能力。Only-host网卡是用来主机访问虚拟机的，具体如何实现的不清楚。
 
 ​	2.进入centos
 
