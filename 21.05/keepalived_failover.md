@@ -16,16 +16,16 @@ Active: inactive (dead)
 ```shell
 server1# cat /etc/keepalived/keepalived.conf
 vrrp_instance VI_1 {
-        state MASTER
-        interface eth0
-        virtual_router_id 51
-        priority 255
-        advert_int 1
-        authentication {
+        state MASTER #状态 MASTER|BCAKUP
+        interface eth0 #虚拟IP绑定的网卡名
+        virtual_router_id 51 #唯一节点ID，相同的节点ID组成集群
+        priority 255 #权重 0-255 权重越大优先抢占虚拟IP
+        advert_int 1 #广播频率 1秒1次
+        authentication { #通信身份验证配置
               auth_type PASS
-              auth_pass 12345
+              auth_pass 12345 #密码
         }
-        virtual_ipaddress {
+        virtual_ipaddress { # 虚拟IP，最多20个
               192.168.122.200/24
         }
 }
@@ -48,17 +48,6 @@ vrrp_instance VI_1 {
         }
 }
 ```
-
-参数解释：
-
-- vrrp_instance VRRP实例名
-- state 初始化状态
-- interface 定义VRRP在哪个网卡上运行
-- virtual_router_id 作为这个配置的唯一ID
-- priority 权重 权重大的机器回复后会拥有虚拟IP
-- advert_int 定义广播发送频率（例子中代表1秒1次）
-- authentication 服务器间的通信认证，案例中是通过密码认证
-- virtual_ipaddress 定义VRRP负责的IP地址 可以多个
 
 ## 启动
 
