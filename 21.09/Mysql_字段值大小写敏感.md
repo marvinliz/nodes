@@ -1,4 +1,6 @@
-通常Mysql的查询语句不是大小写敏感的，如果查询需要大小写敏感，需要用到mysql的`COLLLATE`，他规定了字符集的比较规则。像末尾是ci,cs是大小写不敏感，binary是大小写敏感，比如utf8_bin
+通常Mysql的查询语句不是大小写敏感的，如果查询需要大小写敏感，需要用到mysql的`COLLLATE`，他规定了字符集的比较规则。
+
+像末尾是ci,cs是大小写不敏感，binary是大小写敏感，比如utf8_bin。
 
 ```sql
 SELECT * FROM users WHERE name like 'cRaZy' COLLATE utf8_bin;
@@ -12,5 +14,5 @@ create table `users` (
 
 ## 参考资料
 
-- https://makandracards.com/makandra/19495-mysql-collate-searching-case-sensitive
+- [Mysql collate, searching case sensitive](https://makandracards.com/makandra/19495-mysql-collate-searching-case-sensitive)
 
