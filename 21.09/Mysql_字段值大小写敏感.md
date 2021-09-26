@@ -4,7 +4,9 @@
 
 ```sql
 SELECT * FROM users WHERE name like 'cRaZy' COLLATE utf8_bin;
+
 ALTER TABLE users CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+
 create table `users` (
    `id` bigint(20) NOT NULL AUTO_INCREMENT,
    `name` varchar(255) NOT NULL COMMENT '用户名',
