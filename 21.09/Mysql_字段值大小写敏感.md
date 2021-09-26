@@ -15,4 +15,5 @@ create table `users` (
 ## 参考资料
 
 - [Mysql collate, searching case sensitive](https://makandracards.com/makandra/19495-mysql-collate-searching-case-sensitive)
+- [Case Sensitivity in String Searches](https://dev.mysql.com/doc/refman/8.0/en/case-sensitivity.html)
 
