@@ -7,11 +7,14 @@
 ​	2.进入centos
 
 ```shell
-vi /etc/sysconfig/network-scripts/ifcfg-${NAT网卡名}
+cd /etc/sysconfig/network-scripts
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
 # ONBOOT=yes 开机启动
-# HWADDR=MAC地址
-vi /etc/sysconfig/network-scripts/ifcfg-${Only-host网卡名}
-# ONBOOT=yes 开机启动
+# HWADDR=MAC地址(08:00:27:A7:66:31)
+cp ifcfg-enp0s3 ifcfg-enp0s8
+vi ifcfg-enp0s8
+# NAME=enp0s8
+# DEVICE=enp0s8
 # HWADDR=MAC地址
 # BOOTPROTO=static 手动配置IP地址
 # IPADDR=192.168.56.101
