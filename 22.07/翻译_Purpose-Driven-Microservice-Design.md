@@ -63,7 +63,7 @@
 
 我写过一些关于[Render]平台的文章：
 
-- [[Using Render and Go For the First Time](https://betterprogramming.pub/how-to-create-a-web-service-using-render-and-go-75d211421a00)
+- [Using Render and Go For the First Time](https://betterprogramming.pub/how-to-create-a-web-service-using-render-and-go-75d211421a00)
 - [Under the Hood:Render Unified Cloud](https://betterprogramming.pub/render-unified-cloud-under-the-hood-940d097cede8)
 
 为了让我个人的实例跑在[Render]上，我用过Go，静态网页和Postgres实例。这次，我写了Java/SpringBoot的服务。
