@@ -38,6 +38,52 @@
 
 > 传言这是清朝时期家庭依赖相同的系统来选择男孩，男孩可以为家庭赚钱和延续香火。
 
-[Render Blueprints]: <https://dashboard.render.com/select-repo?type=blueprint>
-[ 中国性别预测指标  ]: https://www.thebump.com/chinese-gender-chart
+下面是它的示例图
 
+![实例图](https://miro.medium.com/max/1400/1*boU8hXND22rqE3eBaOwXag.png)
+
+举个例子，一个18岁的母亲在1月怀孕会生下一个女孩。
+
+为此，我们将创建一个目标驱动微服务，它能返回性别预测基于相同的理论。请求结果实例如下：
+
+```json
+{
+    "month": 1,
+    "age": 18,
+    "gender": "female",
+    "errorMessage": null
+}
+```
+
+该微服务将使用Java和SpringBoot，而且会使用一个多阶段Dockerfile来编译和构建Docker镜像来提供API能力。
+
+源码在此：https://gitlab.com/johnjvester/birth-predictor
+
+## 使用[Render Blueprints]创建Reproducible Pattern
+
+我写过一些关于[Render]平台的文章：
+
+- [[Using Render and Go For the First Time](https://betterprogramming.pub/how-to-create-a-web-service-using-render-and-go-75d211421a00)](https://betterprogramming.pub/how-to-create-a-web-service-using-render-and-go-75d211421a00)
+- [Under the Hood:Render Unified Cloud](https://betterprogramming.pub/render-unified-cloud-under-the-hood-940d097cede8)
+
+为了让我个人的实例跑在[Render]上，我用过Go，静态网页和Postgres实例。这次，我写了Java/SpringBoot的服务。
+
+Java现在还不支持native，所以依赖Docker容器来执行Java。
+
+所以这次用了Dockfile，我正好想要在Render平台上发布Docker服务有多容易，当然我注意到有个[文档](https://render.com/docs/infrastructure-as-code)能帮助我了解该平台是如何工作的。
+
+## 什么是Blueprint？
+
+
+
+[Render Blueprints]: <https://dashboard.render.com/select-repo?type=blueprint>
+[ 中国性别预测指标 ]: https://www.thebump.com/chinese-gender-chart
+[ Render ]: https://render.com/
+
+
+
+## 翻译总结
+
+作者解释了Purpose-Driven Microservice是一个流行语，由一些周刊杂志创造的。个人感觉这就是一个微服务，就像作者说的互联网也有很多别称：“world wide web” “information superhighway”，这些词很容易造成人们的误解。我很赞同作者的观点，明明是一个意思，为什么要创造那么多词，可能是为了流量？为了Money？
+
+本文重心是在介绍了用[Render Blueprints]快速构建一个无状态的服务，并且能被外部访问。
