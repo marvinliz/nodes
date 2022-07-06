@@ -34,7 +34,10 @@
 
 ## 创建一个Docker微服务
 
+[中国性别预测指标]是一个预测孩子性别的系统，由母亲的怀孕年龄和月份来判断。
 
+> 传言这是清朝时期家庭依赖相同的系统来选择男孩，男孩可以为家庭赚钱和延续香火。
 
 [Render Blueprints]: <https://dashboard.render.com/select-repo?type=blueprint>
+[ 中国性别预测指标  ]: https://www.thebump.com/chinese-gender-chart
 
