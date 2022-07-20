@@ -74,16 +74,43 @@ Java现在还不支持native，所以依赖Docker容器来执行Java。
 
 ## 什么是Blueprint？
 
+组织管理需要发布的服务，服务的配置信息写在render.yaml中，是一种Infrastructure as Code (IaC)
 
+## 使用BluePrint Redner
 
-[Render Blueprints]: <https://dashboard.render.com/select-repo?type=blueprint>
-[ 中国性别预测指标 ]: https://www.thebump.com/chinese-gender-chart
-[ Render ]: https://render.com/
+[官方文档](https://render.com/docs/blueprint-spec#sample-blueprint-spec)
 
+我的SpringBoot项目用的配置
 
+```yaml
+services:
+  - type: web
+    name: restful-api-spring-boot
+    env: docker
+    region: ohio # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
+    branch: master # optional (uses repo default)
+    numInstances: 1 # optional (defaults to 1)
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SERVER_PORT
+        value: 443
+```
+
+文件存在项目的根目录下的`render.yaml`中，提交代码后可以自动创建容器
+
+下面都是些介绍如何使用Blueprint的，就不想翻译了。 
 
 ## 翻译总结
 
 作者解释了Purpose-Driven Microservice是一个流行语，由一些周刊杂志创造的。个人感觉这就是一个微服务，就像作者说的互联网也有很多别称：“world wide web” “information superhighway”，这些词很容易造成人们的误解。我很赞同作者的观点，明明是一个意思，为什么要创造那么多词，可能是为了流量？为了Money？
 
-本文重心是在介绍了用[Render Blueprints]快速构建一个无状态的服务，并且能被外部访问。
+本文重心是在介绍了用[Render Blueprints]快速构建一个无状态的服务，并且能被外部访问。推广[Render Blueprints]的一个软文，像一个CD工具。
+
+
+
+
+
+[Render Blueprints]: <https://dashboard.render.com/select-repo?type=blueprint>
+[ 中国性别预测指标 ]: https://www.thebump.com/chinese-gender-chart
+[ Render ]: https://render.com/
